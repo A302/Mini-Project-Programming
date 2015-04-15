@@ -5,6 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MenuActivity">
 
+/* A textview which states the Title in the top of the screen */
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="150dp"
@@ -16,6 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+/* Creates the New Game button. onClick "ToGame" is the method made in the main activity to make something happen when the button is clicked. */
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -27,6 +29,7 @@
         android:textSize="25sp"
         android:onClick="ToGame"/>
 
+/* Creates the How to play button. OnClick = same as above */
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
