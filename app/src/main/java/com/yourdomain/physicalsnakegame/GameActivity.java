@@ -22,20 +22,25 @@ public class GameActivity extends MenuActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-
+ /*
+        The code below implements the map fragment from the related xml file and makes google map appear on the screen.*/
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
-
+/*
+    The method "onMapReady" initiates when google map has succesfully loaded on to the screen.
+    */
     @Override
     public void onMapReady(GoogleMap map) {
-        LatLng sydney = new LatLng(-33.867, 151.206);
-        map.setMyLocationEnabled(true);
+        LatLng sydney = new LatLng(-33.867, 151.206); /* Create a point called "sydney" using longitude and latitudes */
+        map.setMyLocationEnabled(true);/* Connects the devices GPS */
+        /* the code below set up where on the map the view is and how much it should zoom when google maps starts */
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
         map.animateCamera(CameraUpdateFactory.zoomIn());
         map.animateCamera(CameraUpdateFactory.zoomTo(20), 2000, null);
 
+/* Creates a marker taking position from the point "sydney" */
         map.addMarker(new MarkerOptions()
                 .title("Sydney")
                 .snippet("The most populous city in Australia.")
