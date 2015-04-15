@@ -39,11 +39,12 @@ public class MenuActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+ /* Changes the interface to another by clicking a button */
     public void ToGame(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
-
+ /* Changes the interface to another by clicking a button */
     public void ToInstructions(View view) {
         Intent intent = new Intent(this, HowtoPlayActivity.class);
         startActivity(intent);
