@@ -47,6 +47,15 @@ public class GameActivity extends MenuActivity
                 .position(sydney));
     }
 
+     /*  PolylineOptions rectOptions = new PolylineOptions()
+                .add(new LatLng(57.055454, 9.905867))
+                .add(new LatLng(58.055454, 9.905867))
+                .add(new LatLng(58.055454, 10.905867))
+                .add(new LatLng(57.055454, 10.905867))
+                .add(new LatLng(57.055454, 9.905867));
+
+        Polyline polyline = myMap.addPolyline(rectOptions);*/
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
