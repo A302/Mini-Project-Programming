@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     >
 
-/* Creates a fragment which implements the googlemap */
+<!-- Creates a fragment which implements the googlemap -->
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
