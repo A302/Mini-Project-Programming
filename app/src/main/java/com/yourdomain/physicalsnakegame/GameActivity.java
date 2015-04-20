@@ -9,7 +9,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 
 public class GameActivity extends MenuActivity
@@ -33,28 +33,28 @@ public class GameActivity extends MenuActivity
     */
     @Override
     public void onMapReady(GoogleMap map) {
-        LatLng sydney = new LatLng(-33.867, 151.206); /* Create a point called "sydney" using longitude and latitudes */
         map.setMyLocationEnabled(true);/* Connects the devices GPS */
-        /* the code below set up where on the map the view is and how much it should zoom when google maps starts */
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
-        map.animateCamera(CameraUpdateFactory.zoomIn());
-        map.animateCamera(CameraUpdateFactory.zoomTo(20), 2000, null);
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                new LatLng(57.055993, 9.903725), 20));
+        // Polylines are useful for marking paths and routes on the map.
+        map.addPolyline(new PolylineOptions().geodesic(true)
+                        .add(new LatLng(57.055800, 9.903500))
+                        .add(new LatLng(57.055800, 9.903950))
+                        .add(new LatLng(57.056186, 9.903950))
+                        .add(new LatLng(57.056186, 9.903500))
+                        .add(new LatLng(57.055800, 9.903500))
+        );
 
+
+    }
 /* Creates a marker taking position from the point "sydney" */
-        map.addMarker(new MarkerOptions()
+        /*map.addMarker(new MarkerOptions()
                 .title("Sydney")
                 .snippet("The most populous city in Australia.")
                 .position(sydney));
-    }
+    }*/
 
-     /*  PolylineOptions rectOptions = new PolylineOptions()
-                .add(new LatLng(57.055454, 9.905867))
-                .add(new LatLng(58.055454, 9.905867))
-                .add(new LatLng(58.055454, 10.905867))
-                .add(new LatLng(57.055454, 10.905867))
-                .add(new LatLng(57.055454, 9.905867));
 
-        Polyline polyline = myMap.addPolyline(rectOptions);*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
