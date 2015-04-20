@@ -15,7 +15,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" >
 
-        <!-- adds the how to play text to the how to play menu -->
+        <!-- adds the how to play text to the how to play menu, and makes the text scrollable -->
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
