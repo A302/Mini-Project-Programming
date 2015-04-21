@@ -33,7 +33,7 @@ public class GameActivity extends MenuActivity
     }
 
 
-    /*The method "onMapReady" initiates when google map has succesfully loaded on to the screen.*/
+    /*The method "onMapReady" initiates when google map has succesfully loaded on to the screen.dcdcdcdcd*/
     @Override
     public void onMapReady(GoogleMap map) {
 
