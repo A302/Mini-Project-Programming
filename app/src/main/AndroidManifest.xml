@@ -44,8 +44,9 @@
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAGWOXoEPQTOiUBZCDN4VGZwdHRNlMbPyE" /> <!--//Simon's key -->
-        <!-- android:value="AIzaSyC1LN_rIzmCYAiU_Af0vwCyX1JPNUAmoqA" /> //Mathias's key -->
+            android:value="AIzaSyAGWOAIzaSyAGWOAIzaSyAGWOAIzaSyC1LN_rIzmCYAiU_Af0vwCyX1JPNUAmoq" />
+        <!-- Mathias' key = "AIzaSyAGWOAIzaSyC1LN_rIzmCYAiU_Af0vwCyX1JPNUAmoqA"
+        <! - - Simons key = "XoEPQTOiUBZCDN4VGZwdHRNlMbPyE"-->
     </application>
     android:theme="@android:style/Theme.NoTitleBar"
 </manifest>

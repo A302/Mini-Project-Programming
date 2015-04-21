@@ -1,26 +1,17 @@
 package com.yourdomain.physicalsnakegame;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
 
 
 public class GameActivity extends MenuActivity
@@ -36,26 +27,25 @@ public class GameActivity extends MenuActivity
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+         /* Disables the option to drag the map across the screen, as well as zoom, tilt and rotation. The user basically can't do any actions
+        setAllGesturesEnabled is set to false */
+        mapFragment.getMap().getUiSettings().setAllGesturesEnabled(false);
     }
+
 
     /*The method "onMapReady" initiates when google map has succesfully loaded on to the screen.*/
     @Override
     public void onMapReady(GoogleMap map) {
-        MapFragment mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+
 
         /*Tracks the phone's current location*/
         /* Connects the devices GPS */
         map.setMyLocationEnabled(true);
+        map.getUiSettings().setMyLocationButtonEnabled(false);
 
         /*Sets the camera to a specific location*/
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                new LatLng(57.055993, 9.903725), 19.7f));
-
-         /* Disables the option to drag the map across the screen, as well as zoom, tilt and rotation. The user basically can't do any actions
-        setAllGesturesEnabled is set to false */
-        mapFragment.getMap().getUiSettings().setAllGesturesEnabled(false);
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                    new LatLng(57.055993, 9.903725), 19.7f));
 
         /* Polylines are useful for marking paths and routes on the map.
         added a polygon instead of a polyline - it is one cohesive figure appearing as a rectangle
@@ -65,15 +55,21 @@ public class GameActivity extends MenuActivity
         .add(new LatLng(57.055800, 9.903950))
         .add(new LatLng(57.056186, 9.903950))
         .add(new LatLng(57.056186, 9.903500)));
-                map.addMarker(new MarkerOptions()
-                        .title("Point 1")
-                        .alpha(1f)
-                        .position(new LatLng(57.056022, 9.903823)));
-                map.addMarker(new MarkerOptions()
+
+
+         map.addMarker(new MarkerOptions()
+        .title("Point 1")
+        .alpha(1f)
+        .position(new LatLng(57.056022, 9.903823))
+            .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
+
+        map.addMarker(new MarkerOptions()
                          .alpha(0.01f)
                          .title("Point 2")
                          .position(new LatLng(57.056100, 9.903750)));
-                map.addMarker(new MarkerOptions()
+
+
+        map.addMarker(new MarkerOptions()
                          .title("Point 3")
                          .alpha(0.01f)
                          .position(new LatLng(57.055996, 9.903872)));
