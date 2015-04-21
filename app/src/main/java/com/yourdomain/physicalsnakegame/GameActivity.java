@@ -59,7 +59,7 @@ public class GameActivity extends MenuActivity
 
         /* Polylines are useful for marking paths and routes on the map.
         added a polygon instead of a polyline - it is one cohesive figure appearing as a rectangle
-         */
+         sadkljlkjdanwnkl*/
         map.addPolygon(new PolygonOptions()
         .add(new LatLng(57.055800, 9.903500))
         .add(new LatLng(57.055800, 9.903950))
