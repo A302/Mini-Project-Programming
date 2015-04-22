@@ -19,7 +19,8 @@
         <uses-library android:name='com.google.android.maps'/>
         <activity
             android:name=".MenuActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,13 +31,15 @@
         <!-- Implements the button for "How to Play" -->
         <activity
             android:name=".HowtoPlayActivity"
-            android:label="@string/title_activity_howto_play" >
+            android:label="@string/title_activity_howto_play"
+            android:screenOrientation="portrait" >
         </activity>
 
         <!-- Implements the Main Screen of the application -->
         <activity
             android:name=".GameActivity"
-            android:label="@string/title_activity_game" >
+            android:label="@string/title_activity_game"
+            android:screenOrientation="portrait">
         </activity>
 
         <!-- The google Maps API Keys - which makes the maps function correctly

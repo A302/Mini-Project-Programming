@@ -17,7 +17,6 @@ public class MenuActivity extends ActionBarActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -40,12 +39,12 @@ public class MenuActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
- /* Changes the interface to another by clicking a button */
+ /* Implements the functionality for the "new game" button to start a new game */
     public void ToGame(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
- /* Changes the interface to another by clicking a button */
+ /* Changes the interface to another "how to play" by clicking a button */
     public void ToInstructions(View view) {
         Intent intent = new Intent(this, HowtoPlayActivity.class);
         startActivity(intent);

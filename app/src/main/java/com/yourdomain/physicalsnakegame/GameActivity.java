@@ -1,22 +1,29 @@
 package com.yourdomain.physicalsnakegame;
 
+import android.content.Context;
+import android.location.*;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
 
+import static com.google.android.gms.maps.GoogleMap.*;
 
-public class GameActivity extends MenuActivity
 
-        implements OnMapReadyCallback {
+public class GameActivity extends MenuActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +37,11 @@ public class GameActivity extends MenuActivity
          /* Disables the option to drag the map across the screen, as well as zoom, tilt and rotation. The user basically can't do any actions
         setAllGesturesEnabled is set to false */
         mapFragment.getMap().getUiSettings().setAllGesturesEnabled(false);
-    }
+      }
 
-
-    /*The method "onMapReady" initiates when google map has succesfully loaded on to the screen.dcdcdcdcd*/
+    /*The method "onMapReady" initiates when google map has succesfully loaded on to the screen*/
     @Override
     public void onMapReady(GoogleMap map) {
-
 
         /*Tracks the phone's current location*/
         /* Connects the devices GPS */
@@ -44,39 +49,44 @@ public class GameActivity extends MenuActivity
         map.getUiSettings().setMyLocationButtonEnabled(false);
 
         /*Sets the camera to a specific location*/
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(
                     new LatLng(57.055993, 9.903725), 19.7f));
 
         /* Polylines are useful for marking paths and routes on the map.
-        added a polygon instead of a polyline - it is one cohesive figure appearing as a rectangle
-         sadkljlkjdanwnkl*/
+        added a polygon instead of a polyline - it is one cohesive figure appearing as a rectangle*/
         map.addPolygon(new PolygonOptions()
         .add(new LatLng(57.055800, 9.903500))
         .add(new LatLng(57.055800, 9.903950))
         .add(new LatLng(57.056186, 9.903950))
         .add(new LatLng(57.056186, 9.903500)));
 
-
          map.addMarker(new MarkerOptions()
-        .title("Point 1")
-        .alpha(1f)
-        .position(new LatLng(57.056022, 9.903823))
-            .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
+            .title("Point 1")
+            .alpha(1f)
+            .position(new LatLng(57.056022, 9.903823)));
+              //.icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
 
         map.addMarker(new MarkerOptions()
-                         .alpha(0.01f)
-                         .title("Point 2")
-                         .position(new LatLng(57.056100, 9.903750)));
-
+                .alpha(0.1f)
+                .title("Point 2")
+                .position(new LatLng(57.056100, 9.903750)));
 
         map.addMarker(new MarkerOptions()
                          .title("Point 3")
-                         .alpha(0.01f)
+                         .alpha(0.1f)
                          .position(new LatLng(57.055996, 9.903872)));
                 map.addMarker(new MarkerOptions()
                          .title("Point 4")
-                         .alpha(0.01f)
+                         .alpha(0.1f)
                          .position(new LatLng(57.055984, 9.903743)));
+
+        map.setOnMarkerClickListener(new OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                return true;
+            }
+        });
+
     }
 
     @Override
