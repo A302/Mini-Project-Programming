@@ -34,9 +34,9 @@ public class GameActivity extends MenuActivity implements OnMapReadyCallback {
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-         /* Disables the option to drag the map across the screen, as well as zoom, tilt and rotation. The user basically can't do any actions
-        setAllGesturesEnabled is set to false */
-        mapFragment.getMap().getUiSettings().setAllGesturesEnabled(false);
+         /* Disables the option to drag the map across the screen, as well as zoom, tilt and rotation. The user basically can't
+         do any actions when setAllGesturesEnabled is set to false */
+        //mapFragment.getMap().getUiSettings().setAllGesturesEnabled(false);
       }
 
     /*The method "onMapReady" initiates when google map has succesfully loaded on to the screen*/

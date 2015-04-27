@@ -43,11 +43,11 @@
         </activity>
 
         <!-- The google Maps API Keys - which makes the maps function correctly
-        When you are developing, you should comment out YOUR key, and comment away the others. -->
+        When you are developing, you should activate YOUR key, and comment away the others. -->
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAGWOAIzaSyAGWOAIzaSyAGWOAIzaSyC1LN_rIzmCYAiU_Af0vwCyX1JPNUAmoq" />
+            android:value="AIzaSyAGWOXoEPQTOiUBZCDN4VGZwdHRNlMbPyE" />
         <!-- Mathias' key = "AIzaSyAGWOAIzaSyC1LN_rIzmCYAiU_Af0vwCyX1JPNUAmoqA"
         <! - - Simons key = "XoEPQTOiUBZCDN4VGZwdHRNlMbPyE"-->
     </application>
