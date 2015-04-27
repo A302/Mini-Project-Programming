@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <!-- Standard created by a new project -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,19 +22,16 @@
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- Implements the button for "How to Play" -->
         <activity
             android:name=".HowtoPlayActivity"
             android:label="@string/title_activity_howto_play"
             android:screenOrientation="portrait" >
         </activity>
 
-        <!-- Implements the Main Screen of the application -->
         <activity
             android:name=".GameActivity"
             android:label="@string/title_activity_game"
