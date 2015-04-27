@@ -1,20 +1,14 @@
 package com.yourdomain.physicalsnakegame;
 
-import android.content.Context;
-import android.location.*;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -36,7 +30,7 @@ public class GameActivity extends MenuActivity implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
          /* Disables the option to drag the map across the screen, as well as zoom, tilt and rotation. The user basically can't
          do any actions when setAllGesturesEnabled is set to false */
-        //mapFragment.getMap().getUiSettings().setAllGesturesEnabled(false);
+        mapFragment.getMap().getUiSettings().setAllGesturesEnabled(false);
       }
 
     /*The method "onMapReady" initiates when google map has succesfully loaded on to the screen*/
@@ -63,22 +57,26 @@ public class GameActivity extends MenuActivity implements OnMapReadyCallback {
          map.addMarker(new MarkerOptions()
             .title("Point 1")
             .alpha(1f)
-            .position(new LatLng(57.056022, 9.903823)));
-              //.icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
+            .position(new LatLng(57.056022, 9.903823))
+            .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
 
         map.addMarker(new MarkerOptions()
                 .alpha(0.1f)
                 .title("Point 2")
-                .position(new LatLng(57.056100, 9.903750)));
+                .position(new LatLng(57.056100, 9.903750))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
 
         map.addMarker(new MarkerOptions()
                          .title("Point 3")
                          .alpha(0.1f)
-                         .position(new LatLng(57.055996, 9.903872)));
+                         .position(new LatLng(57.055996, 9.903872))
+                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
+
                 map.addMarker(new MarkerOptions()
                          .title("Point 4")
                          .alpha(0.1f)
-                         .position(new LatLng(57.055984, 9.903743)));
+                         .position(new LatLng(57.055984, 9.903743))
+                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
 
         map.setOnMarkerClickListener(new OnMarkerClickListener() {
             @Override

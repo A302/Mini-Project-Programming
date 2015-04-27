@@ -17,7 +17,7 @@
         you get. \n
         For each piece of cheese that is picked up, your tail grows in size. \n
         But be careful! If you run into yourself, you die and the game is over. You will
-        also die you stand still for too long after picking up a cheese, so keep moving at all times
+        also die if you stand still for too long after picking up a cheese, so keep moving at all times
         to reach a greater highscore!
     </string>
     <string name="HowToPlayHeadline"><b>How To Play</b></string>
