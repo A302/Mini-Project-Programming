@@ -21,4 +21,6 @@
         to reach a greater highscore!
     </string>
     <string name="HowToPlayHeadline"><b>How To Play</b></string>
+    <string name="HighScore"><b>Highscore:</b></string>
+    <string name="Score">XXXXX</string>
 </resources>
