@@ -54,25 +54,22 @@ public class GameActivity extends MenuActivity implements OnMapReadyCallback {
         .add(new LatLng(57.056186, 9.903950))
         .add(new LatLng(57.056186, 9.903500)));
 
-         map.addMarker(new MarkerOptions()
+        map.addMarker(new MarkerOptions()
             .alpha(1f)
             .position(new LatLng(57.056022, 9.903823))
             .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
 
         map.addMarker(new MarkerOptions()
                 .alpha(0.1f)
-                .title("Point 2")
                 .position(new LatLng(57.056100, 9.903750))
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
 
         map.addMarker(new MarkerOptions()
-                         .title("Point 3")
                          .alpha(0.1f)
                          .position(new LatLng(57.055996, 9.903872))
                          .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
 
-                map.addMarker(new MarkerOptions()
-                         .title("Point 4")
+        map.addMarker(new MarkerOptions()
                          .alpha(0.1f)
                          .position(new LatLng(57.055984, 9.903743))
                          .icon(BitmapDescriptorFactory.fromResource(R.drawable.cheese)));
